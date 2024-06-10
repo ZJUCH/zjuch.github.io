@@ -102,7 +102,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -115,7 +115,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Zotero%E6%96%87%E7%8C%AE%E5%BA%93%E6%96%87%E4%BB%B6OneDrive%E5%90%8C%E6%AD%A5%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">Zotero文献库文件OneDrive同步设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8F%96%E6%B6%88Zotero%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5"><span class="nav-number">1.1.</span> <span class="nav-text">1 取消Zotero内的文件同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%A7%BB%E5%8A%A8Zotero-storage%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">1.2.</span> <span class="nav-text">2 移动Zotero&#x2F;storage文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BA%E9%93%BE%E6%8E%A5"><span class="nav-number">1.3.</span> <span class="nav-text">3 创建链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zotero%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">Zotero常用插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Zotero-DOI-Manager"><span class="nav-number">2.0.1.</span> <span class="nav-text">1 Zotero DOI Manager</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Jasminum"><span class="nav-number">2.0.2.</span> <span class="nav-text">2 Jasminum</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Sci-Hub-Plugin-for-Zotero"><span class="nav-number">2.0.3.</span> <span class="nav-text">3 Sci-Hub Plugin for Zotero</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Zotero-PDF-Preview"><span class="nav-number">2.0.4.</span> <span class="nav-text">4 Zotero PDF Preview</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Zotero-PDF-Translate"><span class="nav-number">2.0.5.</span> <span class="nav-text">5 Zotero PDF Translate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-Zotero-Tag"><span class="nav-number">2.0.6.</span> <span class="nav-text">6 Zotero Tag</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -215,17 +214,33 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Zotero的免费文件同步空间较小，仅有5G，可通过OneDrive来实现文献库中大量文献文件（PDF、笔记等）的同步。另附Zotero常用插件和链接。<br><span id="more"></span></p>
-<h2 id="Zotero文献库文件OneDrive同步设置"><a href="#Zotero文献库文件OneDrive同步设置" class="headerlink" title="Zotero文献库文件OneDrive同步设置"></a>Zotero文献库文件OneDrive同步设置</h2><h3 id="1-取消Zotero内的文件同步"><a href="#1-取消Zotero内的文件同步" class="headerlink" title="1 取消Zotero内的文件同步"></a>1 取消Zotero内的文件同步</h3><p>登录Zotero账户，在<strong>首选项-&gt;同步-&gt;文件同步</strong>中取消勾选图中两个选项。</p>
-<p><img src="/2024/05/31/Configure-Zotero-Library/取消文件同步.png" alt="取消文件同步" title="取消文件同步"></p>
-<h3 id="2-移动Zotero-storage文件夹"><a href="#2-移动Zotero-storage文件夹" class="headerlink" title="2 移动Zotero/storage文件夹"></a>2 移动Zotero/storage文件夹</h3><p>将<strong>本地Zotero的storage</strong>文件夹：<br><code>C:\Users\(username)\Zotero\storage</code><br><strong>剪切至OneDrive</strong>中，例如：<br><code>C:\Users\(username)\OneDrive\Zotero\storage</code></p>
-<h3 id="3-创建链接"><a href="#3-创建链接" class="headerlink" title="3 创建链接"></a>3 创建链接</h3><p>以<strong>管理员身份</strong>运行<strong>CMD</strong>（该命令仅限CMD），运行命令：<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /J &quot;C:\Users\(username)\Zotero\storage&quot; &quot;C:\Users\(username)\OneDrive\Zotero\storage&quot;</span><br></pre></td></tr></table></figure><br>其中第1个引号内为本地Zotero存储文件夹，第2个引号内为OneDrive内的存储文件夹。</p>
-<h2 id="Zotero常用插件"><a href="#Zotero常用插件" class="headerlink" title="Zotero常用插件"></a>Zotero常用插件</h2><h4 id="1-Zotero-DOI-Manager"><a href="#1-Zotero-DOI-Manager" class="headerlink" title="1 Zotero DOI Manager"></a>1 Zotero DOI Manager</h4><p>Zotero extension to retrieve and validate DOIs and shortDOIs.<br>GitHub Page：<a target="_blank" rel="noopener" href="https://github.com/bwiernik/zotero-shortdoi">https://github.com/bwiernik/zotero-shortdoi</a></p>
-<h4 id="2-Jasminum"><a href="#2-Jasminum" class="headerlink" title="2 Jasminum"></a>2 Jasminum</h4><p>A Zotero add-on to retrive CNKI meta data. 一个简单的Zotero 插件，用于识别中文元数据。<br>GitHub Page：<a target="_blank" rel="noopener" href="https://github.com/l0o0/jasminum">https://github.com/l0o0/jasminum</a></p>
-<h4 id="3-Sci-Hub-Plugin-for-Zotero"><a href="#3-Sci-Hub-Plugin-for-Zotero" class="headerlink" title="3 Sci-Hub Plugin for Zotero"></a>3 Sci-Hub Plugin for Zotero</h4><p>A plugin that will automatically download PDFs of zotero items from sci-hub.<br>GitHub Page：<a target="_blank" rel="noopener" href="https://github.com/ethanwillis/zotero-scihub">https://github.com/ethanwillis/zotero-scihub</a></p>
-<h4 id="4-Zotero-PDF-Preview"><a href="#4-Zotero-PDF-Preview" class="headerlink" title="4 Zotero PDF Preview"></a>4 Zotero PDF Preview</h4><p>Preview Zotero attachments in the library view.<br>GitHub Page：<a target="_blank" rel="noopener" href="https://github.com/windingwind/zotero-pdf-preview">https://github.com/windingwind/zotero-pdf-preview</a></p>
-<h4 id="5-Zotero-PDF-Translate"><a href="#5-Zotero-PDF-Translate" class="headerlink" title="5 Zotero PDF Translate"></a>5 Zotero PDF Translate</h4><p>Translate PDF, EPub, webpage, metadata, annotations, notes to the target language. Support 20+ translate services.<br>GitHub Page：<a target="_blank" rel="noopener" href="https://github.com/windingwind/zotero-pdf-translate">https://github.com/windingwind/zotero-pdf-translate</a></p>
-<h4 id="6-Zotero-Tag"><a href="#6-Zotero-Tag" class="headerlink" title="6 Zotero Tag"></a>6 Zotero Tag</h4><p>Action it, tag it, sorted.<br>GitHub Page：<a target="_blank" rel="noopener" href="https://github.com/windingwind/zotero-actions-tags">https://github.com/windingwind/zotero-actions-tags</a></p>
+    <div class="post-body" itemprop="articleBody"><p>Zotero的免费文件同步空间较小，仅有5G，可通过OneDrive来实现文献库中大量文献文件（PDF、笔记等）的同步。另附Zotero常用插件和链接。
+<span id="more"></span> ## Zotero文献库文件OneDrive同步设置 ### 1
+取消Zotero内的文件同步
+登录Zotero账户，在<strong>首选项-&gt;同步-&gt;文件同步</strong>中取消勾选图中两个选项。</p>
+<p><img src="/2024/05/31/Configure-Zotero-Library/取消文件同步.png" title="取消文件同步" alt="取消文件同步"> ### 2
+移动Zotero/storage文件夹 将<strong>本地Zotero的storage</strong>文件夹：
+<code>C:\Users\(username)\Zotero\storage</code>
+<strong>剪切至OneDrive</strong>中，例如：
+<code>C:\Users\(username)\OneDrive\Zotero\storage</code> ### 3 创建链接
+以<strong>管理员身份</strong>运行<strong>CMD</strong>（该命令仅限CMD），运行命令：
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /J &quot;C:\Users\(username)\Zotero\storage&quot; &quot;C:\Users\(username)\OneDrive\Zotero\storage&quot;</span><br></pre></td></tr></table></figure>
+其中第1个引号内为本地Zotero存储文件夹，第2个引号内为OneDrive内的存储文件夹。
+## Zotero常用插件 #### 1 Zotero DOI Manager Zotero extension to retrieve
+and validate DOIs and shortDOIs. GitHub
+Page：https://github.com/bwiernik/zotero-shortdoi #### 2 Jasminum A
+Zotero add-on to retrive CNKI meta data. 一个简单的Zotero
+插件，用于识别中文元数据。 GitHub Page：https://github.com/l0o0/jasminum
+#### 3 Sci-Hub Plugin for Zotero A plugin that will automatically
+download PDFs of zotero items from sci-hub. GitHub
+Page：https://github.com/ethanwillis/zotero-scihub #### 4 Zotero PDF
+Preview Preview Zotero attachments in the library view. GitHub
+Page：https://github.com/windingwind/zotero-pdf-preview #### 5 Zotero
+PDF Translate Translate PDF, EPub, webpage, metadata, annotations, notes
+to the target language. Support 20+ translate services. GitHub
+Page：https://github.com/windingwind/zotero-pdf-translate #### 6 Zotero
+Tag Action it, tag it, sorted. GitHub
+Page：https://github.com/windingwind/zotero-actions-tags</p>
 
     </div>
 
@@ -318,7 +333,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
