@@ -1,1 +1,1 @@
-A personal blog recording study notes and useful configuration instructions.
+A personal blog recording study notes, software configuration instructions and whatnot. 
