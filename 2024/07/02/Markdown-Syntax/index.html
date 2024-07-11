@@ -19,13 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.calebchen.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"defult"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown 语法归纳整理">
+    <meta name="description" content="本文总结了 Markdown 中的公式语法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown 公式语法">
 <meta property="og:url" content="https://www.calebchen.top/2024/07/02/Markdown-Syntax/index.html">
 <meta property="og:site_name" content="Caleb Chen Blog">
+<meta property="og:description" content="本文总结了 Markdown 中的公式语法。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-07-02T15:42:54.000Z">
-<meta property="article:modified_time" content="2024-07-02T15:44:45.751Z">
+<meta property="article:modified_time" content="2024-07-04T14:03:52.767Z">
 <meta property="article:author" content="Caleb Chen">
 <meta name="twitter:card" content="summary">
 
@@ -34,10 +36,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.calebchen.top/2024/07/02/Markdown-Syntax/","path":"2024/07/02/Markdown-Syntax/","title":"Markdown 语法归纳整理"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.calebchen.top/2024/07/02/Markdown-Syntax/","path":"2024/07/02/Markdown-Syntax/","title":"Markdown 公式语法"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Markdown 语法归纳整理 | Caleb Chen Blog</title>
+<title>Markdown 公式语法 | Caleb Chen Blog</title>
   
 
 
@@ -97,7 +99,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -110,6 +112,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F%E4%B8%8E%E8%A1%8C%E9%97%B4%E5%85%AC%E5%BC%8F"><span class="nav-text">1 行内公式与行间公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%AC%A6%E5%8F%B7%E6%A0%87%E6%B3%A8"><span class="nav-text">2 常用符号标注</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="nav-text">2.1 上下标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D"><span class="nav-text">3 希腊字母</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -180,12 +183,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Markdown 语法归纳整理 | Caleb Chen Blog">
+      <meta itemprop="name" content="Markdown 公式语法 | Caleb Chen Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Markdown 语法归纳整理
+          Markdown 公式语法
         </h1>
 
         <div class="post-meta-container">
@@ -195,9 +198,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-07-02 23:42:54 / Modified: 23:44:45" itemprop="dateCreated datePublished" datetime="2024-07-02T23:42:54+08:00">2024-07-02</time>
+      <time title="Created: 2024-07-02 23:42:54" itemprop="dateCreated datePublished" datetime="2024-07-02T23:42:54+08:00">2024-07-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-04 22:03:52" itemprop="dateModified" datetime="2024-07-04T22:03:52+08:00">2024-07-04</time>
     </span>
 
   
@@ -209,7 +218,351 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><p>本文总结了 Markdown 中的公式语法。 <span id="more"></span></p>
+<h1 id="行内公式与行间公式">1 行内公式与行间公式</h1>
+<table>
+<thead>
+<tr class="header">
+<th>公式类型</th>
+<th>效果预览</th>
+<th>Markdown语法</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>行内公式</td>
+<td><span class="math inline">\(a=b+c\)</span></td>
+<td><code>$a=b+c$</code></td>
+</tr>
+<tr class="even">
+<td>行间公式</td>
+<td><span class="math display">\[a=b+c\]</span></td>
+<td><code>$$a=b+c$$</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="常用符号标注">2 常用符号标注</h1>
+<h2 id="上下标">2.1 上下标</h2>
+<table>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 42%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>数学符号</th>
+<th>效果预览</th>
+<th>Markdown语法</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>向量</td>
+<td><span class="math inline">\(\vec{a}\)</span></td>
+<td><code>\vec&#123;a&#125;</code></td>
+</tr>
+<tr class="even">
+<td>平均值</td>
+<td><span class="math inline">\(\overline{a}\)</span></td>
+<td><code>\overline&#123;a&#125;</code></td>
+</tr>
+<tr class="odd">
+<td>估计值</td>
+<td><span class="math inline">\(\widehat{a}\)</span></td>
+<td><code>\widehat&#123;a&#125;</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\hat{a}\)</span></td>
+<td><code>\hat&#123;a&#125;</code></td>
+</tr>
+<tr class="odd">
+<td>颚化符号、等价无穷小</td>
+<td><span class="math inline">\(\widetilde{a}\)</span></td>
+<td><code>\widetilde&#123;a&#125;</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\tilde{a}\)</span></td>
+<td><code>\tilde&#123;a&#125;</code></td>
+</tr>
+<tr class="odd">
+<td>一阶导数</td>
+<td><span class="math inline">\(\dot{a}\)</span></td>
+<td><code>\dot&#123;a&#125;</code></td>
+</tr>
+<tr class="even">
+<td>二阶导数</td>
+<td><span class="math inline">\(\ddot{a}\)</span></td>
+<td><code>\ddot&#123;a&#125;</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(\check{a}\)</span></td>
+<td><code>\check&#123;a&#125;</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\breve{a}\)</span></td>
+<td><code>\breve&#123;a&#125;</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(\grave{a}\)</span></td>
+<td><code>\grave&#123;a&#125;</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\acute{a}\)</span></td>
+<td><code>\acute&#123;a&#125;</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(\stackrel{x}{y}\)</span></td>
+<td><code>\stackrel&#123;x&#125;&#123;y&#125;</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\overset{x}{y}\)</span></td>
+<td><code>\overset&#123;x&#125;&#123;y&#125;</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(\underset{x}{y}\)</span></td>
+<td><code>\underset&#123;x&#125;&#123;y&#125;</code></td>
+</tr>
+<tr class="even">
+<td>上标</td>
+<td><span class="math inline">\(x^y\)</span></td>
+<td><code>x^y</code></td>
+</tr>
+<tr class="odd">
+<td>下标</td>
+<td><span class="math inline">\(x_y\)</span></td>
+<td><code>x_y</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\sideset{1}{2}\bigotimes\)</span><br><span class="math inline">\(\sideset{1}{2}\bigodot\)</span><br><span class="math inline">\(\sideset{1}{2}\bigoplus\)</span></td>
+<td><code>\sideset&#123;1&#125;&#123;2&#125;\bigotimes</code><br><code>\sideset&#123;1&#125;&#123;2&#125;\bigodot</code><br><code>\sideset&#123;1&#125;&#123;2&#125;\bigoplus</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="希腊字母">3 希腊字母</h1>
+<table>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 12%">
+<col style="width: 19%">
+<col style="width: 12%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>序号</th>
+<th>小写</th>
+<th>Markdown语法</th>
+<th>大写</th>
+<th>Markdown语法</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math inline">\(\alpha\)</span></td>
+<td><code>\alpha</code></td>
+<td><span class="math inline">\(\rm{A}\)</span></td>
+<td><code>\Alpha</code><br><code>\rm&#123;A&#125;</code>（MathJax）</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math inline">\(\beta\)</span></td>
+<td><code>\beta</code></td>
+<td><span class="math inline">\(\rm{B}\)</span></td>
+<td><code>\Beta</code><br><code>\rm&#123;B&#125;</code>（MathJax）</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="参考资料">参考资料</h1>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37769093/article/details/107732606">[markdown语法]公式篇--整理总结了常用的公式语法全</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wzl19981116/p/12830750.html">MarkDown的数学公式</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.enatsu.top/tex/MathSupport/">MathJax数学符号支持</a></li>
+</ol>
 
     </div>
 
@@ -296,7 +649,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
