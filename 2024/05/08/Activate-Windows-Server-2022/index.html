@@ -27,7 +27,7 @@
 <meta property="og:description" content="激活 Windows Server 2022 的方法。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-08T07:45:17.000Z">
-<meta property="article:modified_time" content="2024-07-03T13:18:55.000Z">
+<meta property="article:modified_time" content="2024-07-30T02:18:01.139Z">
 <meta property="article:author" content="Caleb Chen">
 <meta property="article:tag" content="Software">
 <meta name="twitter:card" content="summary">
@@ -100,7 +100,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -113,6 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AF%86%E5%8C%99-key"><span class="nav-text">安装密匙 key：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BF%80%E6%B4%BB%E6%AD%A5%E9%AA%A4"><span class="nav-text">激活步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kms%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">KMS服务器</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -206,7 +207,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-07-03 21:18:55" itemprop="dateModified" datetime="2024-07-03T21:18:55+08:00">2024-07-03</time>
+      <time title="Modified: 2024-07-30 10:18:01" itemprop="dateModified" datetime="2024-07-30T10:18:01+08:00">2024-07-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -227,16 +228,21 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>激活 Windows Server 2022 的方法。 <span id="more"></span> #### 安装密匙 key：</p>
-<p>Windows Server 2022 Standard
-<code>VDYBN-27WPP-V4HQT-9VMD4-VMK7H (GVLK)</code> Windows Server 2022
-Datacenter <code>WX4NM-KYWYW-QJJR4-XV3QB-6VM33 (GVLK)</code> Win2022
-Standard <code>MFY9F-XBN2F-TYFMP-CCV49-RMYVH (LTSC)</code> Win2022
-Datacenter <code>2KNJJ-33Y9H-2GXGX-KMQWH-G6H67 (LTSC)</code> #####
-激活步骤</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">slmgr /upk</span><br><span class="line">slmgr /ipk key</span><br><span class="line">slmgr /skms serveraddress </span><br><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure>
-<p>kms服务器可用：kms.03k.org</p>
-<p>kms服务器查询网站：<a target="_blank" rel="noopener" href="https://www.coolhub.top/tech-articles/kms_list.html">KMS
+    <div class="post-body" itemprop="articleBody"><p>激活 Windows Server 2022 的方法。 <span id="more"></span></p>
+<h1 id="安装密匙-key">安装密匙 key：</h1>
+<p>Windows Server 2022 Standard</p>
+<p><code>VDYBN-27WPP-V4HQT-9VMD4-VMK7H (GVLK)</code></p>
+<p>Windows Server 2022 Datacenter</p>
+<p><code>WX4NM-KYWYW-QJJR4-XV3QB-6VM33 (GVLK)</code></p>
+<p>Win2022 Standard</p>
+<p><code>MFY9F-XBN2F-TYFMP-CCV49-RMYVH (LTSC)</code></p>
+<p>Win2022 Datacenter</p>
+<p><code>2KNJJ-33Y9H-2GXGX-KMQWH-G6H67 (LTSC)</code></p>
+<h1 id="激活步骤">激活步骤</h1>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">slmgr /upk</span><br><span class="line">slmgr /ipk (key)</span><br><span class="line">slmgr /skms (kms_server_address) </span><br><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure>
+<h1 id="kms服务器">KMS服务器</h1>
+<p>KMS 服务器可用：kms.03k.org</p>
+<p>KMS 服务器查询网站：<a target="_blank" rel="noopener" href="https://www.coolhub.top/tech-articles/kms_list.html">KMS
 地址列表——Yerong の小窝</a></p>
 
     </div>
