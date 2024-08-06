@@ -130,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -255,7 +255,7 @@ ip（ip地址也可用<code>localhost</code>代替），<code>10110</code> 是
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -N -f -L 8888:localhost:10110 user@xx.xx.xx.xx</span><br></pre></td></tr></table></figure> ## 其他Linux命令 #### 1 停止进程 若要停止 Linux 上的 SSH
 端口转发或 Jupyter
 Lab，可以通过 <code>ps aux | grep (filter_name)</code> 来查找进程，并
-<code>kill</code> 进程。 #### 2 SSH 连接参数 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-C 压缩传输  </span><br><span class="line">-f 将 SSH 传输转入后台执行  </span><br><span class="line">-N 建立静默连接  </span><br><span class="line">-g 允许远程主机连接本地用于转发的端口  </span><br><span class="line">-L 本地端口转发</span><br></pre></td></tr></table></figure></p>
+<code>kill</code> 进程。 #### 2 SSH 连接参数 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-C 压缩传输  </span></span><br><span class="line"><span class="deletion">-f 将 SSH 传输转入后台执行  </span></span><br><span class="line"><span class="deletion">-N 建立静默连接  </span></span><br><span class="line"><span class="deletion">-g 允许远程主机连接本地用于转发的端口  </span></span><br><span class="line"><span class="deletion">-L 本地端口转发</span></span><br></pre></td></tr></table></figure></p>
 
     </div>
 
