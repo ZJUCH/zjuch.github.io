@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.calebchen.top/2024/05/08/My-First-Blog/</loc>
+    
+    <lastmod>2024-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.calebchen.top/2024/05/08/Activate-Windows-Server-2022/</loc>
     
     <lastmod>2024-08-06</lastmod>
@@ -77,15 +86,6 @@
     <loc>https://www.calebchen.top/2024/06/01/Access-JupyterLab-via-SSH-PortForwarding/</loc>
     
     <lastmod>2024-07-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.calebchen.top/2024/05/08/My-First-Blog/</loc>
-    
-    <lastmod>2024-06-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
