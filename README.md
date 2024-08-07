@@ -1,1 +1,1 @@
-A personal blog recording study notes, software configuration instructions and whatnot. 
+A personal blog by Caleb Chen. 
