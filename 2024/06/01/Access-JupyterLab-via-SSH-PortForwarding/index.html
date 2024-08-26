@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.calebchen.top/2024/06/01/Access-JupyterLab-via-SSH-PortForwarding/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png">
 <meta property="article:published_time" content="2024-05-31T17:01:52.000Z">
-<meta property="article:modified_time" content="2024-07-03T13:18:45.000Z">
+<meta property="article:modified_time" content="2024-08-26T08:52:24.088Z">
 <meta property="article:author" content="Caleb Chen">
 <meta property="article:tag" content="Software">
 <meta name="twitter:card" content="summary">
@@ -103,7 +103,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -116,6 +116,9 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E6%8B%93%E6%89%91%E5%9B%BE"><span class="nav-text">网络结构拓扑图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%AD%A5%E9%AA%A4"><span class="nav-text">连接步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95-master-%E5%92%8C-node-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">1 登录 master 和
+node 服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-node-%E4%B8%8A%E8%BF%90%E8%A1%8C-jupyter-lab"><span class="nav-text">2 在 node 上运行
+Jupyter Lab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="nav-text">3 端口转发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96linux%E5%91%BD%E4%BB%A4"><span class="nav-text">其他Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E8%BF%9B%E7%A8%8B"><span class="nav-text">1 停止进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-%E8%BF%9E%E6%8E%A5%E5%8F%82%E6%95%B0"><span class="nav-text">2 SSH 连接参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -209,7 +212,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-07-03 21:18:45" itemprop="dateModified" datetime="2024-07-03T21:18:45+08:00">2024-07-03</time>
+      <time title="Modified: 2024-08-26 16:52:24" itemprop="dateModified" datetime="2024-08-26T16:52:24+08:00">2024-08-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -230,32 +233,49 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>通过跳板机 SSH 端口转发，访问目标服务器的 Jupyter Lab。 <span id="more"></span>
-参考资料：https://notes.hxhc.xyz/ ## 网络结构拓扑图 现有一台 GPU
+    <div class="post-body" itemprop="articleBody"><p>通过跳板机 SSH 端口转发，访问目标服务器的 Jupyter Lab。
+<span id="more"></span></p>
+<h1 id="网络结构拓扑图">网络结构拓扑图</h1>
+<p>现有一台 GPU
 服务器（<code>node</code>），与另一服务器（<code>master</code>）即跳板机相连。GPU
 服务器未接入网络，但 <code>master</code> 接入网络，此时可以采用两次 SSH
-端口转发访问 <code>node</code> 上运行的 Jupyter Lab。 <img src="/2024/06/01/Access-JupyterLab-via-SSH-PortForwarding/网络拓扑结构.png" alt="网络结构拓扑图"> ## 连接步骤 ### 1 登录 <code>master</code> 和
-<code>node</code> 服务器 从本地登录 <code>master</code> 节点
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@master_ip</span><br></pre></td></tr></table></figure> 从 <code>master</code> 登录 <code>node</code> 节点
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh username@node</span><br><span class="line">or</span><br><span class="line">ssh node</span><br></pre></td></tr></table></figure> 从 <code>node</code> 登录 <code>master</code>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh username@master</span><br><span class="line">or</span><br><span class="line">ssh master</span><br></pre></td></tr></table></figure> 退回上一级 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure> ### 2 在 <code>node</code> 上运行
-Jupyter Lab 设置 Jupyter 密码 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook password</span><br></pre></td></tr></table></figure> 运行 Jupyter Lab
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter lab --no-browser --ip=&quot;0.0.0.0&quot; --port=10886</span><br></pre></td></tr></table></figure> 若要运行 Jupyter Lab 时不显示输出，将输出写入nohup.out文件
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter lab --no-browser --ip=&quot;0.0.0.0&quot; --port=10886 &amp;</span><br></pre></td></tr></table></figure> ### 3 端口转发 <code>master</code>
-上的端口转发：<code>master</code> 也是无界面的 commandline
-模式，因此需要转发 <code>node</code> 的 <code>10886</code> 端口。在
-<code>master</code> 中运行以下命令，其中 <code>xx.xx.xx.xx</code> 是
-<code>master</code> 的
+端口转发访问 <code>node</code> 上运行的 Jupyter Lab。 <img src="/2024/06/01/Access-JupyterLab-via-SSH-PortForwarding/网络拓扑结构.png" alt="网络结构拓扑图"></p>
+<h1 id="连接步骤">连接步骤</h1>
+<h2 id="登录-master-和-node-服务器">1 登录 <code>master</code> 和
+<code>node</code> 服务器</h2>
+<p>从本地登录 <code>master</code> 节点 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@master_ip</span><br></pre></td></tr></table></figure> 从
+<code>master</code> 登录 <code>node</code> 节点 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh username@node</span><br><span class="line">or</span><br><span class="line">ssh node</span><br></pre></td></tr></table></figure> 从
+<code>node</code> 登录 <code>master</code> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh username@master</span><br><span class="line">or</span><br><span class="line">ssh master</span><br></pre></td></tr></table></figure> 退回上一级
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure></p>
+<h2 id="在-node-上运行-jupyter-lab">2 在 <code>node</code> 上运行
+Jupyter Lab</h2>
+<p>设置 Jupyter 密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook password</span><br></pre></td></tr></table></figure>
+<p>运行 Jupyter Lab <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter lab --no-browser --ip=&quot;0.0.0.0&quot; --port=10886</span><br></pre></td></tr></table></figure> 若要运行 Jupyter Lab
+时不显示输出，将输出写入nohup.out文件 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter lab --no-browser --ip=&quot;0.0.0.0&quot; --port=10886 &amp;</span><br></pre></td></tr></table></figure></p>
+<h2 id="端口转发">3 端口转发</h2>
+<p><code>master</code> 上的端口转发：<code>master</code> 也是无界面的
+commandline 模式，因此需要转发 <code>node</code> 的 <code>10886</code>
+端口。在 <code>master</code>
+中运行以下命令，其中 <code>xx.xx.xx.xx</code> 是 <code>master</code> 的
 ip（ip地址也可用<code>localhost</code>代替），<code>10110</code> 是
 <code>master</code> 的端口，<code>10886</code> 是 <code>node</code>
 的端口。 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -N -f -L 10110:xx.xx.xx.xx:10886 user@node</span><br></pre></td></tr></table></figure> 此时 <code>node</code> 的 Jupyter Lab 可以在
 <code>master</code> 上通过 <code>localhost:10110</code>
 或在本地通过 <code>xx.xx.xx.xx:10110</code> 进行访问。出于某些原因，有时可能需要将
 <code>master</code> 的端口再转发至本地，即 <code>localhost</code>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -N -f -L 8888:localhost:10110 user@xx.xx.xx.xx</span><br></pre></td></tr></table></figure> ## 其他Linux命令 #### 1 停止进程 若要停止 Linux 上的 SSH
-端口转发或 Jupyter
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -N -f -L 8888:localhost:10110 user@xx.xx.xx.xx</span><br></pre></td></tr></table></figure></p>
+<h2 id="其他linux命令">其他Linux命令</h2>
+<h3 id="停止进程">1 停止进程</h3>
+<p>若要停止 Linux 上的 SSH 端口转发或 Jupyter
 Lab，可以通过 <code>ps aux | grep (filter_name)</code> 来查找进程，并
-<code>kill</code> 进程。 #### 2 SSH 连接参数 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-C 压缩传输  </span></span><br><span class="line"><span class="deletion">-f 将 SSH 传输转入后台执行  </span></span><br><span class="line"><span class="deletion">-N 建立静默连接  </span></span><br><span class="line"><span class="deletion">-g 允许远程主机连接本地用于转发的端口  </span></span><br><span class="line"><span class="deletion">-L 本地端口转发</span></span><br></pre></td></tr></table></figure></p>
+<code>kill</code> 进程。</p>
+<h3 id="ssh-连接参数">2 SSH 连接参数</h3>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-C 压缩传输  </span></span><br><span class="line"><span class="deletion">-f 将 SSH 传输转入后台执行  </span></span><br><span class="line"><span class="deletion">-N 建立静默连接  </span></span><br><span class="line"><span class="deletion">-g 允许远程主机连接本地用于转发的端口  </span></span><br><span class="line"><span class="deletion">-L 本地端口转发</span></span><br></pre></td></tr></table></figure>
+<h1 id="参考资料">参考资料</h1>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://notes.hxhc.xyz/">https://notes.hxhc.xyz/</a></li>
+</ol>
 
     </div>
 
