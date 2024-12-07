@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://www.calebchen.top/2024/06/03/Conversion-Between-TimeSeries-and-Images/GAF-GADF.png">
 <meta property="og:image" content="https://www.calebchen.top/2024/06/03/Conversion-Between-TimeSeries-and-Images/GAF-Reconstructed-TS.png">
 <meta property="article:published_time" content="2024-06-03T11:31:01.000Z">
-<meta property="article:modified_time" content="2024-09-16T08:57:42.262Z">
+<meta property="article:modified_time" content="2024-12-07T14:09:55.741Z">
 <meta property="article:author" content="Caleb Chen">
 <meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary">
@@ -121,11 +121,8 @@
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%BC%E6%8B%89%E5%A7%86%E8%A7%92%E5%9C%BAgramian-angular-field"><span class="nav-text">1 格拉姆角场（Gramian Angular
-Field）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E6%8B%89%E5%A7%86%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97-%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F"><span class="nav-text">1.1
-格拉姆矩阵变换（时间序列-&gt;二维图像）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E6%8B%89%E5%A7%86%E7%9F%A9%E9%98%B5%E9%80%86%E5%8F%98%E6%8D%A2%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="nav-text">1.2
-格拉姆矩阵逆变换（二维图像-&gt;时间序列）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gaf-%E7%9A%84-python-%E7%A4%BA%E4%BE%8B"><span class="nav-text">1.3 GAF 的 Python 示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">1.4 参考资料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BD%AC%E7%A7%BB%E5%9C%BAmarkov-transition-field"><span class="nav-text">2 马尔可夫转移场（Markov
-Transition Field）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BD%AC%E7%A7%BB%E5%9C%BA%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97-%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F"><span class="nav-text">2.1
-马尔可夫转移场（时间序列-&gt;二维图像）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mtf-%E7%9A%84-python-%E7%A4%BA%E4%BE%8B"><span class="nav-text">2.2 MTF 的 Python 示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99-1"><span class="nav-text">2.3 参考资料</span></a></li></ol></li></ol></div>
+Field）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E6%8B%89%E5%A7%86%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2"><span class="nav-text">1.1 格拉姆矩阵变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-text">1.1.1 时间序列归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%81%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="nav-text">1.1.2 极坐标变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%86%85%E7%A7%AF"><span class="nav-text">1.1.3 自定义内积</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E6%8B%89%E5%A7%86%E7%9F%A9%E9%98%B5%E9%80%86%E5%8F%98%E6%8D%A2"><span class="nav-text">1.2 格拉姆矩阵逆变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gaf-%E7%9A%84-python-%E7%A4%BA%E4%BE%8B"><span class="nav-text">1.3 GAF 的 Python 示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">1.4 参考资料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BD%AC%E7%A7%BB%E5%9C%BAmarkov-transition-field"><span class="nav-text">2 马尔可夫转移场（Markov
+Transition Field）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BD%AC%E7%A7%BB%E5%9C%BA"><span class="nav-text">2.1 马尔可夫转移场</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E7%AE%B1"><span class="nav-text">2.1.1 时间序列分箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BD%AC%E7%A7%BB%E7%9F%A9%E9%98%B5"><span class="nav-text">2.1.2 构造马尔可夫转移矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BD%AC%E7%A7%BB%E5%9C%BA"><span class="nav-text">2.1.3 构造马尔可夫转移场</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mtf-%E7%9A%84-python-%E7%A4%BA%E4%BE%8B"><span class="nav-text">2.2 MTF 的 Python 示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99-1"><span class="nav-text">2.3 参考资料</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -219,7 +216,7 @@ Transition Field）</span></a><ol class="nav-child"><li class="nav-item nav-leve
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-09-16 16:57:42" itemprop="dateModified" datetime="2024-09-16T16:57:42+08:00">2024-09-16</time>
+      <time title="Modified: 2024-12-07 22:09:55" itemprop="dateModified" datetime="2024-12-07T22:09:55+08:00">2024-12-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -245,13 +242,12 @@ Series）数据转换为二维图像（Image）可以显著地扩展可用的分
 <span id="more"></span></p>
 <h1 id="格拉姆角场gramian-angular-field">1 格拉姆角场（Gramian Angular
 Field）</h1>
-<h2 id="格拉姆矩阵变换时间序列-二维图像">1.1
-格拉姆矩阵变换（时间序列-&gt;二维图像）</h2>
+<h2 id="格拉姆矩阵变换">1.1 格拉姆矩阵变换</h2>
 <p>格拉姆角场（Gramian Angular
 Field，GAF）是结合坐标变换和格拉姆矩阵的相关知识，实现将时间序列变换成图像的一种编码方法。格拉姆矩阵是两两向量的内积组成，可以保存时间序列的时间依赖性，却不能有效的区分价值信息和高斯噪声。因此，在进行格拉姆矩阵变换之前，时间序列需要进行空间变换，普遍的方法是将笛卡尔坐标系转换成极坐标系（半径、角度）。</p>
 <p>对于时间序列 <span class="math inline">\(X=&lt;x_t&gt;, t\in\mathbb
 N\)</span>，可通过以下步骤得到 GAF 图：</p>
-<p><strong>①归一化</strong></p>
+<h3 id="时间序列归一化">1.1.1 时间序列归一化</h3>
 <p>通过最大-最小归一化（Min-Max Scaler），将原始时间序列数据缩放到 <span class="math inline">\([-1,1]\)</span> 或 <span class="math inline">\([0,1]\)</span>： <span class="math display">\[
 \begin{equation} \label{eq1}
 \tilde{x}_{-1}^{i}={(x_i-max(X))+(x_i-min(X))\over max(X)-min(X)}
@@ -260,7 +256,8 @@ N\)</span>，可通过以下步骤得到 GAF 图：</p>
 \begin{equation} \label{eq2}
 \tilde{x}_{0}^{i}={(x_i-min(X))\over max(X)-min(X)}
 \end{equation}
-\]</span> <strong>②极坐标变换</strong></p>
+\]</span></p>
+<h3 id="极坐标变换">1.1.2 极坐标变换</h3>
 <p>将归一化后的数据变换为极坐标： <span class="math display">\[
 \begin{align} \label{eq3}
 \left\{
@@ -271,7 +268,8 @@ r_i={t_i\over N}&amp;, t_i\in\mathbb{N} \\
 \end{array}
 \right.
 \end{align}
-\]</span> <strong>③自定义内积</strong></p>
+\]</span></p>
+<h3 id="自定义内积">1.1.3 自定义内积</h3>
 <p>利用和角关系和差角关系，得到对应的 GASF 图和 GADF 图 <span class="math display">\[
 \begin{equation} \label{eq4}
 GASF=[cos(\phi_i+\phi_j)]=\tilde{X^{&#39;}}\cdot\tilde{X}-\sqrt{I-\tilde{X^{&#39;2}}}\cdot\sqrt{I-\tilde{X^{2}}}
@@ -282,8 +280,7 @@ GASF=[cos(\phi_i+\phi_j)]=\tilde{X^{&#39;}}\cdot\tilde{X}-\sqrt{I-\tilde{X^{&#39
 GADF=[sin(\phi_i-\phi_j)]=\sqrt{I-\tilde{X^{&#39;2}}}\cdot\tilde{X}-\tilde{X^{&#39;}}\cdot\sqrt{I-\tilde{X^{2}}}
 \end{equation}
 \]</span></p>
-<h2 id="格拉姆矩阵逆变换二维图像-时间序列">1.2
-格拉姆矩阵逆变换（二维图像-&gt;时间序列）</h2>
+<h2 id="格拉姆矩阵逆变换">1.2 格拉姆矩阵逆变换</h2>
 <p>若在归一化时对时间序列进行 0-1 归一化，则可对 GASF
 通过逆变换得到唯一的时间序列。</p>
 <p>在格拉姆矩阵变换中，GASF
@@ -342,11 +339,56 @@ Matlab实现</a></p></li>
 <li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/594793726">两篇时间序列转成图像的论文</a></p></li>
 <li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41281244/article/details/108686005">用python将时间序列信号或一维数组
 转化成 图像的几种方法</a></p></li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/QKK612501/article/details/113904250">将一维数据(序列)转化为二维数据(图像)的方法汇总GAFS,
+MTF, Recurrence plot,STFT</a></p></li>
 </ol>
 <h1 id="马尔可夫转移场markov-transition-field">2 马尔可夫转移场（Markov
 Transition Field）</h1>
-<h2 id="马尔可夫转移场时间序列-二维图像">2.1
-马尔可夫转移场（时间序列-&gt;二维图像）</h2>
+<h2 id="马尔可夫转移场">2.1 马尔可夫转移场</h2>
+<p>马尔可夫转移场（Markov Transition
+Field，MTF）是基于马尔可夫转移矩阵的一种时间序列图像编码方法。该方法将时间序列的时间推移看成是一个马尔可夫过程，即：在已知目前状态的条件下，它未来的演变不依赖于它以往的演变，由此构造马尔可夫转移矩阵，进而拓展为马尔可夫转移场，实现图像编码。</p>
+<p>对于时间序列 <span class="math inline">\(X=&lt;x_t&gt;, t\in\mathbb
+N\)</span>，可通过以下步骤得到MTF图：</p>
+<h3 id="时间序列分箱">2.1.1 时间序列分箱</h3>
+<p>将时间序列按照取值划分为 <span class="math inline">\(Q\)</span>
+个分位箱（Bin），且每个分位箱内的数据量相同；任一数据点 <span class="math inline">\(x_i\)</span> 属于唯一的分箱 <span class="math inline">\(q_j, j \in [1,Q]\)</span>。</p>
+<h3 id="构造马尔可夫转移矩阵">2.1.2 构造马尔可夫转移矩阵</h3>
+<p>通过在时间轴上以一阶马尔可夫链的方式统计分位箱之间的转移频率，得到尺寸为
+<span class="math inline">\([Q, Q]\)</span> 的加权邻接矩阵 <span class="math inline">\(W\)</span>，其中 <span class="math inline">\(w_{ij}\)</span> 为分位箱 <span class="math inline">\(q_i\)</span> 转移到 <span class="math inline">\(q_j\)</span> 的频率；再通过 <span class="math inline">\(\sum_{j}{w_{ij}}=1\)</span>
+归一化后，即可得到马尔可夫转移矩阵： <span class="math display">\[
+\begin{equation} \label{eq8}
+W=
+\left[
+\begin{matrix}
+w_{11} &amp; \cdots &amp; w_{iQ} \\
+w_{21} &amp; \cdots &amp; w_{2Q} \\
+\vdots &amp; \ddots &amp; \vdots \\
+w_{Q1} &amp; \cdots &amp; w_{QQ} \\
+\end{matrix}
+\right]
+,s.t.\sum_{j}{w_{ij}}=1
+\end{equation}
+\]</span></p>
+<h3 id="构造马尔可夫转移场">2.1.3 构造马尔可夫转移场</h3>
+<p>计算从 <span class="math inline">\(i\)</span> 时刻到 <span class="math inline">\(j\)</span> 时刻（此处 <span class="math inline">\(i\)</span>、<span class="math inline">\(j\)</span>
+为时间轴）时间序列的值从 <span class="math inline">\(q_i\)</span>
+分箱转移到 <span class="math inline">\(q_j\)</span> 分箱的概率，记为
+<span class="math inline">\(M_{ij}\)</span>，即可得到马尔可夫转移场：</p>
+
+$$
+\begin{equation} \label{eq9}
+M=
+\left[
+\begin{matrix}
+w_{ij}|_{{x_1}\in{q_i},{x_1}\in{q_j}} & \cdots & w_{ij}|_{{x_1}\in{q_i},{x_n}\in{q_j}} \\
+w_{ij}|_{{x_2}\in{q_i},{x_1}\in{q_j}} & \cdots & w_{ij}|_{{x_2}\in{q_i},{x_n}\in{q_j}} \\
+\vdots & \ddots & \vdots \\
+w_{ij}|_{{x_n}\in{q_i},{x_1}\in{q_j}} & \cdots & w_{ij}|_{{x_n}\in{q_i},{x_n}\in{q_j}} \\
+\end{matrix}
+\right]
+\end{equation}
+$$
+
 <h2 id="mtf-的-python-示例">2.2 MTF 的 Python 示例</h2>
 <h2 id="参考资料-1">2.3 参考资料</h2>
 <ol type="1">
@@ -355,6 +397,8 @@ Matlab实现</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41281244/article/details/108686005">用python将时间序列信号或一维数组
 转化成 图像的几种方法</a></li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/594793726">两篇时间序列转成图像的论文</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/QKK612501/article/details/113904250">将一维数据(序列)转化为二维数据(图像)的方法汇总GAFS,
+MTF, Recurrence plot,STFT</a></li>
 </ol>
 
     </div>
