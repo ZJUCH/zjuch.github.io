@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.calebchen.top/2024/05/31/Configure-Zotero-Library/%E5%8F%96%E6%B6%88%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5.png">
 <meta property="article:published_time" content="2024-05-31T11:05:17.000Z">
-<meta property="article:modified_time" content="2024-12-06T13:29:16.050Z">
+<meta property="article:modified_time" content="2024-12-07T07:11:12.941Z">
 <meta property="article:author" content="Caleb Chen">
 <meta property="article:tag" content="Software">
 <meta name="twitter:card" content="summary">
@@ -212,7 +212,7 @@ OneDrive 同步设置</span></a><ol class="nav-child"><li class="nav-item nav-le
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-06 21:29:16" itemprop="dateModified" datetime="2024-12-06T21:29:16+08:00">2024-12-06</time>
+      <time title="Modified: 2024-12-07 15:11:12" itemprop="dateModified" datetime="2024-12-07T15:11:12+08:00">2024-12-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -240,17 +240,19 @@ OneDrive 同步设置</span></a><ol class="nav-child"><li class="nav-item nav-le
 OneDrive 同步设置</h1>
 <h2 id="取消-zotero-内的文件同步">1.1 取消 Zotero 内的文件同步</h2>
 <p>登录 Zotero
-账户，在<strong>首选项-&gt;同步-&gt;文件同步</strong>中取消勾选图中两个选项。</p>
+账户，在<strong>“首选项-&gt;同步-&gt;文件同步”</strong>（Zotero
+6）或<strong>“Zotero设置-&gt;同步-&gt;文件同步”</strong>（Zotero
+7）中取消勾选图中两个选项。</p>
 <figure>
 <img src="/2024/05/31/Configure-Zotero-Library/取消文件同步.png" title="取消文件同步" alt="取消文件同步">
 <figcaption aria-hidden="true">取消文件同步</figcaption>
 </figure>
 <h2 id="移动-zoterostorage-文件夹">1.2 移动 <code>Zotero/storage</code>
 文件夹</h2>
-<p>将<strong>本地 Zotero 的 storage</strong> 文件夹：
-<code>C:\Users\(username)\Zotero\storage</code> <strong>剪切至
-OneDrive</strong> 中，例如：
-<code>C:\Users\(username)\OneDrive\Zotero\storage</code></p>
+<p>将本地的 Zotero/storage
+文件夹：<code>C:\Users\(username)\Zotero\storage</code><br> 剪切至
+OneDrive
+中，例如：<code>C:\Users\(username)\OneDrive\Zotero\storage</code></p>
 <h2 id="创建链接">1.3 创建链接</h2>
 <p>以<strong>管理员身份</strong>运行
 <strong>CMD</strong>（该命令仅限CMD），运行命令： <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /J &quot;C:\Users\(username)\Zotero\storage&quot; &quot;C:\Users\(username)\OneDrive\Zotero\storage&quot;</span><br></pre></td></tr></table></figure>
@@ -259,9 +261,9 @@ OneDrive</strong> 中，例如：
 <h1 id="zotero-常用插件">2 Zotero 常用插件</h1>
 <table>
 <colgroup>
-<col style="width: 17%">
-<col style="width: 41%">
-<col style="width: 41%">
+<col style="width: 18%">
+<col style="width: 40%">
+<col style="width: 40%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -273,50 +275,56 @@ OneDrive</strong> 中，例如：
 <tbody>
 <tr class="odd">
 <td>Add-on Market for Zotero</td>
-<td>This is a Zotero add-on that allows for the direct installation of
-other add-ons in Zotero.</td>
+<td>Install add-ons directly in Zotero | Zotero Add-on Market |
+Zotero插件市场</td>
 <td><a target="_blank" rel="noopener" href="https://github.com/syt2/zotero-addons">GitHub Page</a></td>
 </tr>
 <tr class="even">
+<td>Ethereal Style</td>
+<td>Ethereal Style for Zotero.</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/muisedestiny/zotero-style">GitHub
+Page</a></td>
+</tr>
+<tr class="odd">
 <td>Zotero DOI Manager</td>
 <td>Zotero extension to retrieve and validate DOIs and shortDOIs.</td>
 <td><a target="_blank" rel="noopener" href="https://github.com/bwiernik/zotero-shortdoi">GitHub
 Page</a></td>
 </tr>
-<tr class="odd">
-<td>Jasminum</td>
-<td>A Zotero add-on to retrive CNKI meta data. 一个简单的 Zotero
+<tr class="even">
+<td>茉莉花（jasminum）For Zotero</td>
+<td>A Zotero add-on to retrive CNKI meta data. 一个简单的Zotero
 插件，用于识别中文元数据。</td>
 <td><a target="_blank" rel="noopener" href="https://github.com/l0o0/jasminum">GitHub Page</a></td>
 </tr>
-<tr class="even">
-<td>Sci-Hub Plugin for Zotero</td>
+<tr class="odd">
+<td>Zotero Scihub</td>
 <td>A plugin that will automatically download PDFs of zotero items from
 sci-hub.</td>
 <td><a target="_blank" rel="noopener" href="https://github.com/ethanwillis/zotero-scihub">GitHub
 Page</a></td>
 </tr>
-<tr class="odd">
-<td>Zotero PDF Preview</td>
+<tr class="even">
+<td>Preview for Zotero</td>
 <td>Preview Zotero attachments in the library view.</td>
 <td><a target="_blank" rel="noopener" href="https://github.com/windingwind/zotero-pdf-preview">GitHub
 Page</a></td>
 </tr>
-<tr class="even">
-<td>Zotero PDF Translate</td>
+<tr class="odd">
+<td>Translate for Zotero</td>
 <td>Translate PDF, EPub, webpage, metadata, annotations, notes to the
 target language. Support 20+ translate services.</td>
 <td><a target="_blank" rel="noopener" href="https://github.com/windingwind/zotero-pdf-translate">GitHub
 Page</a></td>
 </tr>
-<tr class="odd">
-<td>Zotero Tag</td>
-<td>Action it, tag it, sorted.</td>
+<tr class="even">
+<td>Actions and Tags for Zotero</td>
+<td>Customize your Zotero workflow.</td>
 <td><a target="_blank" rel="noopener" href="https://github.com/windingwind/zotero-actions-tags">GitHub
 Page</a></td>
 </tr>
-<tr class="even">
-<td>Zotero Better Notes</td>
+<tr class="odd">
+<td>Better Notes for Zotero</td>
 <td>Everything about note management. All in Zotero.</td>
 <td><a target="_blank" rel="noopener" href="https://github.com/windingwind/zotero-better-notes">GitHub
 Page</a></td>
