@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari_pinned_tab.svg" color="#222">
+  <meta name="google-site-verification" content="TS7X7jwB1fHrHVGo4V2GQ5I9q-SFGQt0WfOSMYROaoY">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.calebchen.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"defult"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="tinyMediaManager 的刮削服务总是失败或缓慢，根本原因在于 TMDB（The Movie Database）网站的 DNS 地址无法解析，可通过手动修改 DNS 解决。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决 tinyMediaManager 刮削失败或缓慢的问题">
+<meta property="og:url" content="https://www.calebchen.top/2024/07/29/Boost-TMDB-Scraper-for-tMM/index.html">
+<meta property="og:site_name" content="Caleb Chen Blog">
+<meta property="og:description" content="tinyMediaManager 的刮削服务总是失败或缓慢，根本原因在于 TMDB（The Movie Database）网站的 DNS 地址无法解析，可通过手动修改 DNS 解决。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.calebchen.top/2024/07/29/Boost-TMDB-Scraper-for-tMM/DNS%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E8%AF%A2.png">
+<meta property="article:published_time" content="2024-07-29T05:17:40.000Z">
+<meta property="article:modified_time" content="2024-08-06T06:49:39.000Z">
+<meta property="article:author" content="Caleb Chen">
+<meta property="article:tag" content="Software">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.calebchen.top/2024/07/29/Boost-TMDB-Scraper-for-tMM/DNS%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E8%AF%A2.png">
+
+
+<link rel="canonical" href="https://www.calebchen.top/2024/07/29/Boost-TMDB-Scraper-for-tMM/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.calebchen.top/2024/07/29/Boost-TMDB-Scraper-for-tMM/","path":"2024/07/29/Boost-TMDB-Scraper-for-tMM/","title":"解决 tinyMediaManager 刮削失败或缓慢的问题"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>解决 tinyMediaManager 刮削失败或缓慢的问题 | Caleb Chen Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Caleb Chen Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">A personal blog by Caleb Chen.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-text">操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tmm-%E9%9C%80%E8%A6%81%E8%AE%BF%E9%97%AE%E7%9A%84-tmdb-%E5%9F%9F%E5%90%8D"><span class="nav-text">1 tMM 需要访问的 TMDB 域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%9B%BD%E5%86%85%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E4%BF%AE%E6%94%B9-hosts"><span class="nav-text">2
+查询国内域名解析服务器并修改 hosts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B7%E6%96%B0dns%E7%BC%93%E5%AD%98"><span class="nav-text">3 刷新DNS缓存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Caleb Chen"
+      src="/uploads/avatar.gif">
+  <p class="site-author-name" itemprop="name">Caleb Chen</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ZJUCH" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ZJUCH" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.calebchen.top/2024/07/29/Boost-TMDB-Scraper-for-tMM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+      <meta itemprop="name" content="Caleb Chen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Caleb Chen Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="解决 tinyMediaManager 刮削失败或缓慢的问题 | Caleb Chen Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          解决 tinyMediaManager 刮削失败或缓慢的问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-07-29 13:17:40" itemprop="dateCreated datePublished" datetime="2024-07-29T13:17:40+08:00">2024-07-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-08-06 14:49:39" itemprop="dateModified" datetime="2024-08-06T14:49:39+08:00">2024-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>tinyMediaManager 的刮削服务总是失败或缓慢，根本原因在于 TMDB（The
+Movie Database）网站的 DNS 地址无法解析，可通过手动修改 DNS 解决。</p>
+<span id="more"></span>
+<h1 id="解决方法">解决方法</h1>
+<p>手动修改DNS。</p>
+<h1 id="操作步骤">操作步骤</h1>
+<h2 id="tmm-需要访问的-tmdb-域名">1 tMM 需要访问的 TMDB 域名</h2>
+<p>通过查看 tMM 的报错信息，可以发现 tMM 主要访问 TMDB
+的三个地址，分别是：</p>
+<ul>
+<li>api.themoviedb.org</li>
+<li>www.themoviedb.org</li>
+<li>image.tmdb.org</li>
+</ul>
+<p>这3个地址无法解析，导致刮削失败或缓慢。</p>
+<h2 id="查询国内域名解析服务器并修改-hosts">2
+查询国内域名解析服务器并修改 hosts</h2>
+<p>通过 <a target="_blank" rel="noopener" href="https://dnschecker.org/">https://dnschecker.org/</a>
+查询上述三个地址，选择在国内的域名解析服务器。</p>
+<figure>
+<img src="/2024/07/29/Boost-TMDB-Scraper-for-tMM/DNS服务器查询.png" alt="DNS服务器查询">
+<figcaption aria-hidden="true">DNS服务器查询</figcaption>
+</figure>
+<p>然后手动修改本地 hosts，hosts
+路径为：<code>C:\Windows\System32\drivers\etc</code>。</p>
+<p>直接修改无法保存，可以复制一份到桌面，修改桌面的
+hosts，再用修改后的版本替换 C 盘的 hosts。</p>
+<h2 id="刷新dns缓存">3 刷新DNS缓存</h2>
+<p>在 CMD 中刷新 DNS 缓存：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span> /flushdns</span><br></pre></td></tr></table></figure>
+<p>随后重启 tMM，即可正常刮削。</p>
+<h1 id="参考资料">参考资料</h1>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv18215732/">解决tmm刮削失败</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Software/" rel="tag"># Software</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/07/02/Markdown-Syntax/" rel="prev" title="Markdown 公式语法">
+                  <i class="fa fa-angle-left"></i> Markdown 公式语法
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/08/05/Polars-and-Pandas/" rel="next" title="Polars 与 Pandas 性能比较">
+                  Polars 与 Pandas 性能比较 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2024 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Caleb Chen</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/ZJUCH" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
