@@ -18,34 +18,34 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.calebchen.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"defult"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"calebchen.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"defult"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="经过 2024 年 7 月的升级，校园网认证方式出现重大变化，有线网由 L2TP 认证更改为网页认证。升级后，通过 L2TP 认证无法获取 IPv6 地址，通过网页认证可获取 IPv6 地址，但速度由 1000Mbps 降为 500Mbps。本文介绍如何通过 OpenWrt 连接升级后的校园网。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="通过 OpenWrt 连接 ZJU 校园网">
-<meta property="og:url" content="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/index.html">
+<meta property="og:url" content="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/index.html">
 <meta property="og:site_name" content="Caleb Chen Blog">
 <meta property="og:description" content="经过 2024 年 7 月的升级，校园网认证方式出现重大变化，有线网由 L2TP 认证更改为网页认证。升级后，通过 L2TP 认证无法获取 IPv6 地址，通过网页认证可获取 IPv6 地址，但速度由 1000Mbps 降为 500Mbps。本文介绍如何通过 OpenWrt 连接升级后的校园网。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/%E5%85%B3%E9%97%AD%E9%87%8D%E7%BB%91%E5%AE%9A%E4%BF%9D%E6%8A%A4.png">
-<meta property="og:image" content="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/WAN6%E8%AE%BE%E7%BD%AE.png">
-<meta property="og:image" content="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/%E8%AE%BE%E7%BD%AE%E5%B1%80%E5%9F%9F%E7%BD%91IPv6%E7%BD%91%E6%AE%B5.png">
-<meta property="og:image" content="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/LAN-IPv6%E8%AE%BE%E7%BD%AE.png">
-<meta property="og:image" content="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/LAN-IPv6RA%E8%AE%BE%E7%BD%AE.png">
-<meta property="og:image" content="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/%E6%B5%8B%E8%AF%95-ZJU%E9%95%9C%E5%83%8F%E7%AB%99.png">
-<meta property="og:image" content="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/USTC%E6%B5%8B%E9%80%9F.png">
+<meta property="og:image" content="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/%E5%85%B3%E9%97%AD%E9%87%8D%E7%BB%91%E5%AE%9A%E4%BF%9D%E6%8A%A4.png">
+<meta property="og:image" content="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/WAN6%E8%AE%BE%E7%BD%AE.png">
+<meta property="og:image" content="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/%E8%AE%BE%E7%BD%AE%E5%B1%80%E5%9F%9F%E7%BD%91IPv6%E7%BD%91%E6%AE%B5.png">
+<meta property="og:image" content="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/LAN-IPv6%E8%AE%BE%E7%BD%AE.png">
+<meta property="og:image" content="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/LAN-IPv6RA%E8%AE%BE%E7%BD%AE.png">
+<meta property="og:image" content="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/%E6%B5%8B%E8%AF%95-ZJU%E9%95%9C%E5%83%8F%E7%AB%99.png">
+<meta property="og:image" content="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/USTC%E6%B5%8B%E9%80%9F.png">
 <meta property="article:published_time" content="2025-03-01T12:34:37.000Z">
 <meta property="article:modified_time" content="2025-03-01T14:20:21.898Z">
 <meta property="article:author" content="Caleb Chen">
 <meta property="article:tag" content="Software">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/%E5%85%B3%E9%97%AD%E9%87%8D%E7%BB%91%E5%AE%9A%E4%BF%9D%E6%8A%A4.png">
+<meta name="twitter:image" content="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/%E5%85%B3%E9%97%AD%E9%87%8D%E7%BB%91%E5%AE%9A%E4%BF%9D%E6%8A%A4.png">
 
 
-<link rel="canonical" href="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/">
+<link rel="canonical" href="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/","path":"2025/03/01/Connect-ZJUNet-with-OpenWrt/","title":"通过 OpenWrt 连接 ZJU 校园网"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/","path":"2025/03/01/Connect-ZJUNet-with-OpenWrt/","title":"通过 OpenWrt 连接 ZJU 校园网"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>通过 OpenWrt 连接 ZJU 校园网 | Caleb Chen Blog</title>
@@ -181,7 +181,7 @@ NAT 规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" h
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/">
+    <link itemprop="mainEntityOfPage" href="https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.gif">
