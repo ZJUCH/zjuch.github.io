@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
@@ -127,7 +127,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -151,6 +151,10 @@
 
         </div>
       </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
     </div>
 
     
@@ -222,19 +226,19 @@
 <h1 id="行内公式与行间公式">1 行内公式与行间公式</h1>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>公式类型</th>
 <th>效果预览</th>
 <th>Markdown语法</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>行内公式</td>
 <td><span class="math inline">\(a=b+c\)</span></td>
 <td><code>$a=b+c$</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>行间公式</td>
 <td><span class="math display">\[a=b+c\]</span></td>
 <td><code>$$a=b+c$$</code></td>
@@ -252,7 +256,7 @@
 <col style="width: 12%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>小写</th>
 <th>Markdown语法</th>
@@ -262,7 +266,7 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>1</td>
 <td><span class="math inline">\(\alpha\)</span></td>
 <td><code>\alpha</code></td>
@@ -270,7 +274,7 @@
 <td><code>\Alpha</code></td>
 <td><code>\rm&#123;A&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>2</td>
 <td><span class="math inline">\(\beta\)</span></td>
 <td><code>\beta</code></td>
@@ -278,7 +282,7 @@
 <td><code>\Beta</code></td>
 <td><code>\rm&#123;B&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>3</td>
 <td><span class="math inline">\(\gamma\)</span></td>
 <td><code>\gamma</code></td>
@@ -286,7 +290,7 @@
 <td><code>\Gamma</code></td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>4</td>
 <td><span class="math inline">\(\delta\)</span></td>
 <td><code>\delta</code></td>
@@ -294,7 +298,7 @@
 <td><code>\Delta</code></td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>5</td>
 <td><span class="math inline">\(\epsilon\)</span> 或 <span class="math inline">\(\varepsilon\)</span></td>
 <td><code>\epsilon</code> 或 <code>\varepsilon</code></td>
@@ -302,7 +306,7 @@
 <td><code>\Epsilon</code></td>
 <td><code>\rm&#123;E&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>6</td>
 <td><span class="math inline">\(\zeta\)</span></td>
 <td><code>\zeta</code></td>
@@ -310,7 +314,7 @@
 <td><code>\Zeta</code></td>
 <td><code>\rm&#123;Z&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>7</td>
 <td><span class="math inline">\(\eta\)</span></td>
 <td><code>\eta</code></td>
@@ -318,7 +322,7 @@
 <td><code>\Eta</code></td>
 <td><code>\rm&#123;H&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>8</td>
 <td><span class="math inline">\(\theta\)</span> 或 <span class="math inline">\(\vartheta\)</span></td>
 <td><code>\theta</code> 或 <code>\vartheta</code></td>
@@ -326,7 +330,7 @@
 <td><code>\Theta</code></td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>9</td>
 <td><span class="math inline">\(\iota\)</span></td>
 <td><code>\iota</code></td>
@@ -334,7 +338,7 @@
 <td><code>\Iota</code></td>
 <td><code>\rm&#123;I&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>10</td>
 <td><span class="math inline">\(\kappa\)</span> 或 <span class="math inline">\(\varkappa\)</span></td>
 <td><code>\kappa</code> 或 <code>\varkappa</code></td>
@@ -342,7 +346,7 @@
 <td><code>\Kappa</code></td>
 <td><code>rm&#123;K&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>11</td>
 <td><span class="math inline">\(\lambda\)</span></td>
 <td><code>\lambda</code></td>
@@ -350,7 +354,7 @@
 <td><code>\Lambda</code></td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>12</td>
 <td><span class="math inline">\(\mu\)</span></td>
 <td><code>\mu</code></td>
@@ -358,7 +362,7 @@
 <td><code>\Mu</code></td>
 <td><code>\rm&#123;M&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>13</td>
 <td><span class="math inline">\(\nu\)</span></td>
 <td><code>\nu</code></td>
@@ -366,7 +370,7 @@
 <td><code>\Nu</code></td>
 <td><code>\rm&#123;N&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>14</td>
 <td><span class="math inline">\(\xi\)</span></td>
 <td><code>\xi</code></td>
@@ -374,7 +378,7 @@
 <td><code>\Xi</code></td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>15</td>
 <td><span class="math inline">\(\omicron\)</span></td>
 <td><code>\omicron</code></td>
@@ -382,7 +386,7 @@
 <td><code>\Omicron</code></td>
 <td><code>\rm&#123;O&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>16</td>
 <td><span class="math inline">\(\pi\)</span> 或 <span class="math inline">\(\varpi\)</span></td>
 <td><code>\pi</code> 或 <code>\varpi</code></td>
@@ -390,7 +394,7 @@
 <td><code>\Pi</code></td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>17</td>
 <td><span class="math inline">\(\rho\)</span> 或 <span class="math inline">\(\varrho\)</span></td>
 <td><code>\rho</code> 或 <code>\varrho</code></td>
@@ -398,7 +402,7 @@
 <td><code>\Rho</code></td>
 <td><code>\rm&#123;P&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>18</td>
 <td><span class="math inline">\(\sigma\)</span> 或 <span class="math inline">\(\varsigma\)</span></td>
 <td><code>\sigma</code> 或 <code>\varsigma</code></td>
@@ -406,7 +410,7 @@
 <td><code>\Sigma</code></td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>19</td>
 <td><span class="math inline">\(\tau\)</span></td>
 <td><code>\tau</code></td>
@@ -414,7 +418,7 @@
 <td><code>\Tau</code></td>
 <td><code>\rm&#123;T&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>20</td>
 <td><span class="math inline">\(\upsilon\)</span></td>
 <td><code>\upsilon</code></td>
@@ -422,7 +426,7 @@
 <td><code>\Upsilon</code></td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>21</td>
 <td><span class="math inline">\(\phi\)</span> 或 <span class="math inline">\(\varphi\)</span></td>
 <td><code>\phi</code> 或 <code>\varphi</code></td>
@@ -430,7 +434,7 @@
 <td><code>\Phi</code></td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>22</td>
 <td><span class="math inline">\(\chi\)</span></td>
 <td><code>\chi</code></td>
@@ -438,7 +442,7 @@
 <td><code>\Chi</code></td>
 <td><code>\rm&#123;X&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>23</td>
 <td><span class="math inline">\(\psi\)</span></td>
 <td><code>\psi</code></td>
@@ -446,7 +450,7 @@
 <td><code>\Psi</code></td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>24</td>
 <td><span class="math inline">\(\omega\)</span></td>
 <td><code>\omega</code></td>
@@ -460,74 +464,74 @@
 <h2 id="基础运算符">3.1 基础运算符</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>数学符号</th>
 <th>效果预览</th>
 <th>Markdown语法</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>乘</td>
 <td><span class="math inline">\(a \times b\)</span></td>
 <td><code>a \times b</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>除</td>
 <td><span class="math inline">\(a \div b\)</span></td>
 <td><code>a \div b</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>取余</td>
 <td><span class="math inline">\(a \mid b\)</span></td>
 <td><code>a \mid b</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>加减</td>
 <td><span class="math inline">\(a \pm b\)</span></td>
 <td><code>a \pm b</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>减加</td>
 <td><span class="math inline">\(a \mp b\)</span></td>
 <td><code>a \mp b</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>不等于</td>
 <td><span class="math inline">\(a \ne b\)</span></td>
 <td><code>a \ne b</code> 或 <code>a \neq b</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>小于</td>
 <td><span class="math inline">\(a \lt b\)</span></td>
 <td><code>a \lt b</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>大于</td>
 <td><span class="math inline">\(a \gt b\)</span></td>
 <td><code>a \gt b</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>小于等于</td>
 <td><span class="math inline">\(a \le b\)</span></td>
 <td><code>a \le b</code> 或 <code>a \leq b</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>大于等于</td>
 <td><span class="math inline">\(a \ge b\)</span></td>
 <td><code>a \ge b</code> 或 <code>a \geq b</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>远小于</td>
 <td><span class="math inline">\(a \ll b\)</span></td>
 <td><code>a \ll b</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>远大于</td>
 <td><span class="math inline">\(a \gg b\)</span></td>
 <td><code>a \gg b</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>约等于</td>
 <td><span class="math inline">\(a \approx b\)</span></td>
 <td><code>a \approx b</code></td>
@@ -537,49 +541,49 @@
 <h2 id="集合运算符">3.2 集合运算符</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>数学符号</th>
 <th>效果预览</th>
 <th>Markdown语法</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>属于</td>
 <td><span class="math inline">\(a \in A\)</span></td>
 <td><code>a \in A</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>不属于</td>
 <td><span class="math inline">\(a \notin A\)</span></td>
 <td><code>a \notin A</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>包含</td>
 <td><span class="math inline">\(A \ni a\)</span></td>
 <td><code>A \ni a</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>真包含于</td>
 <td><span class="math inline">\(A \subset B\)</span></td>
 <td><code>A \subset B</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>包含于</td>
 <td><span class="math inline">\(A \subseteq B\)</span></td>
 <td><code>A \subseteq B</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td><span class="math inline">\(A \subseteqq B\)</span></td>
 <td><code>A \sebseteqq B</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td></td>
 <td><span class="math inline">\(A \subsetneq B\)</span></td>
 <td><code>A \subsetneq B</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td><span class="math inline">\(A \subsetneqq B\)</span></td>
 <td><code>A \subsetneqq B</code></td>
@@ -594,104 +598,104 @@
 <col style="width: 42%">
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>数学符号</th>
 <th>效果预览</th>
 <th>Markdown语法</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>向量</td>
 <td><span class="math inline">\(\vec{a}\)</span></td>
 <td><code>\vec&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>平均值</td>
 <td><span class="math inline">\(\overline{a}\)</span></td>
 <td><code>\overline&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>估计值</td>
 <td><span class="math inline">\(\widehat{a}\)</span></td>
 <td><code>\widehat&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td><span class="math inline">\(\hat{a}\)</span></td>
 <td><code>\hat&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>颚化符号、等价无穷小</td>
 <td><span class="math inline">\(\widetilde{a}\)</span></td>
 <td><code>\widetilde&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td><span class="math inline">\(\tilde{a}\)</span></td>
 <td><code>\tilde&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>一阶导数</td>
 <td><span class="math inline">\(\dot{a}\)</span></td>
 <td><code>\dot&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>二阶导数</td>
 <td><span class="math inline">\(\ddot{a}\)</span></td>
 <td><code>\ddot&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td></td>
 <td><span class="math inline">\(\check{a}\)</span></td>
 <td><code>\check&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td><span class="math inline">\(\breve{a}\)</span></td>
 <td><code>\breve&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td></td>
 <td><span class="math inline">\(\grave{a}\)</span></td>
 <td><code>\grave&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td><span class="math inline">\(\acute{a}\)</span></td>
 <td><code>\acute&#123;a&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td></td>
 <td><span class="math inline">\(\stackrel{x}{y}\)</span></td>
 <td><code>\stackrel&#123;x&#125;&#123;y&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td><span class="math inline">\(\overset{x}{y}\)</span></td>
 <td><code>\overset&#123;x&#125;&#123;y&#125;</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td></td>
 <td><span class="math inline">\(\underset{x}{y}\)</span></td>
 <td><code>\underset&#123;x&#125;&#123;y&#125;</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>上标</td>
 <td><span class="math inline">\(x^y\)</span></td>
 <td><code>x^y</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>下标</td>
 <td><span class="math inline">\(x_y\)</span></td>
 <td><code>x_y</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td><span class="math inline">\(\sideset{1}{2}\bigotimes\)</span><br><span class="math inline">\(\sideset{1}{2}\bigodot\)</span><br><span class="math inline">\(\sideset{1}{2}\bigoplus\)</span></td>
 <td><code>\sideset&#123;1&#125;&#123;2&#125;\bigotimes</code><br><code>\sideset&#123;1&#125;&#123;2&#125;\bigodot</code><br><code>\sideset&#123;1&#125;&#123;2&#125;\bigoplus</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>
@@ -763,10 +767,6 @@
     <span class="toggle-line"></span>
   </div>
   <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="Back to top">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
 
   <a href="https://github.com/ZJUCH" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 

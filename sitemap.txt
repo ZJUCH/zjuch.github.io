@@ -1,3 +1,4 @@
+https://calebchen.top/2025/03/20/Ensemble-Learning/
 https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/
 https://calebchen.top/2024/06/03/Conversion-Between-TimeSeries-and-Images/
 https://calebchen.top/2024/10/11/Enterprise-Hard-Drive-List/
@@ -15,10 +16,10 @@ https://calebchen.top/categories/index.html
 https://calebchen.top/tags/index.html
 https://calebchen.top/
 https://calebchen.top/tags/Software/
-https://calebchen.top/tags/Algorithm/
 https://calebchen.top/tags/Hardware/
 https://calebchen.top/tags/Others/
+https://calebchen.top/tags/Algorithm/
 https://calebchen.top/categories/Software/
-https://calebchen.top/categories/Algorithm/
 https://calebchen.top/categories/Hardware/
 https://calebchen.top/categories/Others/
+https://calebchen.top/categories/Algorithm/

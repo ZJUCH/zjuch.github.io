@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://calebchen.top/2025/03/20/Ensemble-Learning/</loc>
+    
+    <lastmod>2025-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://calebchen.top/2025/03/01/Connect-ZJUNet-with-OpenWrt/</loc>
     
     <lastmod>2025-03-01</lastmod>
@@ -139,7 +148,7 @@
 
   <url>
     <loc>https://calebchen.top/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -147,28 +156,28 @@
   
   <url>
     <loc>https://calebchen.top/tags/Software/</loc>
-    <lastmod>2025-03-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://calebchen.top/tags/Algorithm/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://calebchen.top/tags/Hardware/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://calebchen.top/tags/Others/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://calebchen.top/tags/Algorithm/</loc>
+    <lastmod>2025-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -177,28 +186,28 @@
   
   <url>
     <loc>https://calebchen.top/categories/Software/</loc>
-    <lastmod>2025-03-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://calebchen.top/categories/Algorithm/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://calebchen.top/categories/Hardware/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://calebchen.top/categories/Others/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://calebchen.top/categories/Algorithm/</loc>
+    <lastmod>2025-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
